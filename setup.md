@@ -10,4 +10,4 @@ git clone https://github.com/WVUResearchComputing/SummerLectures.git
 Once you execute the git command, you should have a folder called SummerLectures
 and in there a set of folders the folders and subfolders are numbered folowing the planned delivery of lectures.
 
-{% include links.md %}
+#{% include links.md %}

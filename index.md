@@ -19,4 +19,4 @@ Day 4: Introduction to Parallel Computing (OpenMP, MPI, GPU programming)
 > For most part we assume some familiarity to Unix/Linux environments and working from the command line. These prerequisites are lowered for the first day trying to offer a low slope for begginers.
 {: .prereq}
 
-{% include links.md %}
+#{% include links.md %}
