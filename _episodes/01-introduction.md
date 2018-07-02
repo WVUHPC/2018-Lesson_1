@@ -117,4 +117,4 @@ In tmux, hit the prefix `CTRL+b` and then:
 ~~~
 {: .source}
 
-#{% include links.md %}
+{% include links.md %}
