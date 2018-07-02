@@ -10,7 +10,7 @@
 carpentry: "swc"
 
 # Overall title for pages.
-title: "Lesson Title"
+title: "WVU Summer Lectures on HPC (Summer 2018)"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
@@ -25,7 +25,7 @@ kind: "lesson"
 repository: <USERNAME>/<PROJECT>
 
 # Email address, no mailto:
-email: "team@carpentries.org"
+email: "gufranco@mail.wvu.edu"
 
 # Sites.
 amy_site: "https://amy.software-carpentry.org/workshops"
