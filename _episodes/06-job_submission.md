@@ -1,11 +1,11 @@
 ---
-title: "Torque and Moab"
+title: "Job Submission (Torque and Moab)"
 teaching: 45
 exercises: 15
 questions:
 - "How to submit jobs on the HPC cluster?"
 objectives:
-- "Show the user commands for Torque and Moab. The queue system used on Spruce"
+- "Learn the most frequently used commands for Torque and Moab"
 keypoints:
 - "It is a good idea to keep aliases to common torque commands for easy execution."
 ---

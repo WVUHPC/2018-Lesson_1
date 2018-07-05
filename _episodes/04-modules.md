@@ -1,5 +1,5 @@
 ---
-title: "Using Environmental Modules"
+title: "Environment Modules"
 teaching: 45
 exercises: 15
 questions:
@@ -10,7 +10,7 @@ keypoints:
 - "You can preload modules for each login by adding the load line on your .bashrc"
 ---
 
-## Environmental Modules
+## Environment Modules
 
 The modules software package allows you to dynamically modify your user environment by using “modulefiles.”
 

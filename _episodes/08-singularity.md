@@ -1,13 +1,13 @@
 ---
-title: "Singularity Containers"
+title: "Software Containers (Singularity)"
 teaching: 45
 exercises: 15
 questions:
-- "Using singularity containers and the images provided on Spruce"
+- "What is a software container and hoy to use it?"
 objectives:
-- "Using singularity containers"
+- "Use singularity containers"
 keypoints:
-- "Containers provide a easy way to keep code and data reproducible by keeping a consistent environment for a workflow."
+- "Containers provide a easy way to keep code and data reproducible by creating a consistent environment for a workflow."
 ---
 
 ## Singularity Containers
@@ -22,7 +22,7 @@ There are several container solutions, one prominent example is Docker, however,
 
 Singularity offers an alternative solution to Docker, users can run the prepared images that we are offering on Spruce or bring their own.
 
-For more information about Singularity and complete documentation see: https://singularity.lbl.gov/quickstart 
+For more information about Singularity and complete documentation see: https://singularity.lbl.gov/quickstart
 
 ### How to use a singularity Image
 
@@ -109,7 +109,7 @@ Follow the instructions for accesisng an interactive session
 The image is located at:
 
 ~~~
-/shared/software/containers/RStudio-desktop-1.1.423_R-3.4.3.simg 
+/shared/software/containers/RStudio-desktop-1.1.423_R-3.4.3.simg
 ~~~
 {: .source}
 

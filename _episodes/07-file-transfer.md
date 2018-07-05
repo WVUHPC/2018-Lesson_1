@@ -7,10 +7,10 @@ questions:
 objectives:
 - "Show the use of rsync"
 keypoints:
-- "On windows, there is no simple replacement for rsync. You can use the file trasfer application that comes with PuTTY"
+- "On windows, there is no simple replacement for rsync. You can use the file trasnfer application that comes with PuTTY or use Globus"
 ---
 
-## Rsync for secure transfer of files 
+## Rsync for secure transfer of files
 
 For replicating datasets between the HPC clusters and your workstation,
 or between two filesystems on an HPC cluster, rsync offers powerful

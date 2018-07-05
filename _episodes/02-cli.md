@@ -1,5 +1,5 @@
 ---
-title: "Basic Commands to learn"
+title: "Basics of Command Line Interface"
 teaching: 45
 exercises: 15
 questions:

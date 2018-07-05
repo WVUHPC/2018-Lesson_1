@@ -1,6 +1,6 @@
 ---
-title: "Text Editors"
-teaching: 105
+title: "Text Editors (vi, emacs and nano)"
+teaching: 45
 exercises: 15
 questions:
 - "How edit text files on Linux using the terminal?"

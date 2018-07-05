@@ -1,13 +1,13 @@
 ---
-title: "Logging in to Spruce"
+title: "Getting access to the Cluster"
 teaching: 45
 exercises: 15
 questions:
 - "How to connect without using passwords?"
 objectives:
-- "Learn how to connect to Spruce in several ways"
+- "Learn how to connect with SSH to a HPC cluster"
 keypoints:
-- "Use ssh to connect to Spruce"
+- "Use ssh to connect. Use ssh -X to get X11 Forwarding"
 - "On windows you can use PuTTY"
 - "To get X Window on Windows use for example MobaXTerm"
 ---
