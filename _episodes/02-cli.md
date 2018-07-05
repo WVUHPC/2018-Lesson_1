@@ -1,6 +1,6 @@
 ---
 title: "Basics of Command Line Interface"
-teaching: 45
+teaching: 15
 exercises: 15
 questions:
 - "Which are the most basic commands that I need to learn?"

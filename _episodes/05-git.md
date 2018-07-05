@@ -1,6 +1,6 @@
 ---
 title: "Version Control (git)"
-teaching: 45
+teaching: 105
 exercises: 15
 questions:
 - "How to keep track of changes in text files"

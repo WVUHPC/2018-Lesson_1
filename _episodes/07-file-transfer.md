@@ -1,6 +1,6 @@
 ---
 title: "Transferring Files"
-teaching: 45
+teaching: 15
 exercises: 15
 questions:
 - "How transfer files from/to cluster to/from my workstation?"

@@ -1,6 +1,6 @@
 ---
 title: "Software Containers (Singularity)"
-teaching: 45
+teaching: 15
 exercises: 15
 questions:
 - "What is a software container and hoy to use it?"

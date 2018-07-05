@@ -1,6 +1,6 @@
 ---
 title: "Getting access to the Cluster"
-teaching: 45
+teaching: 15
 exercises: 15
 questions:
 - "How to connect without using passwords?"
