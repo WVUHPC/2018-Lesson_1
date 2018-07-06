@@ -54,7 +54,65 @@ Once you enter on the system, you can start typing commands. You can open severa
 > {: .solution}
 {: .challenge}
 
-## tmux
+# Connecting with SSH without password
+
+If you do not have a pair of public and private keys on your own computer, create a new pair with (Linux and Mac only)
+
+~~~
+$ ssh-keygen -t ecdsa
+~~~
+{: .source}
+
+~~~
+Generating public/private ecdsa key pair.
+Enter file in which to save the key (/users/gufranco/.ssh/id_ecdsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /users/gufranco/.ssh/id_ecdsa.
+Your public key has been saved in /users/gufranco/.ssh/id_ecdsa.pub.
+The key fingerprint is:
+ca:fe:2c:df:10:a0:97:ca:fe:fd:34:5c:34:ce:33:64 gufranco@srih0001.hpc.wvu.edu
+The key's randomart image is:
++--[ECDSA  256]---+
+|      o=.. o=    |
+|     ..+o += .   |
+|    . o .o .=    |
+|     . . ..  o   |
+|      . .        |
+|     . = +       |
+|      o o .      |
+|                 |
+|                 |
++-----------------+
+~~~
+{: .output}
+
+Now we need to transfer the public key to be accepted as a authorized key on the remote server
+
+~~~
+ssh-copy-id -i .ssh/id_ecdsa.pub <USERNAME>@spruce.hpc.wvu.edu
+~~~
+{: .source}
+
+Next time, log in to spruce with that username will happen without asking you for password. As far as you are using the same machine your private key will give you access to the remote machine.
+
+This procedure will not work if you need to use DUO authentication, for example for external access out of campus network.
+
+> ## ECDSA vs DSA vs RSA
+>
+> There are several digital signing algorithms. The best known are RSA (Used by SSH2 for signing), DSA and ECDSA.
+>
+> In practice this is the rational for when use each:
+>
+> RSA key will work everywhere. ECDSA support is newer, so some old client or server may have trouble with ECDSA keys. DSA used to work everywhere, as per the SSH standard, but recently OpenSSH 7.0 and higher no longer accept DSA keys by default.
+>
+>
+> ECDSA is computationally lighter, a smaller key will give you the same level of protection than a much larger RSA key.
+>
+> Right now, if you use large enough keys (2048 bits for RSA or DSA, 256 bits for ECDSA) you are considered safe. Key size is specified with the -b parameter. >
+{: .callout}
+
+# tmux
 
 For normal usage, the terminal that you get is probably enough.
 Power users can benefit from a terminal multiplexer such as tmux.
@@ -82,7 +140,7 @@ tmux a
 
 In tmux, hit the prefix `CTRL+b` and then:
 
-### Sessions
+## Sessions
 ~~~
     :new<CR>  new session
     s  list sessions
@@ -90,7 +148,7 @@ In tmux, hit the prefix `CTRL+b` and then:
 ~~~
 {: .source}
 
-### Windows (tabs)
+## Windows (tabs)
 
 ~~~
     c  create window
@@ -103,7 +161,7 @@ In tmux, hit the prefix `CTRL+b` and then:
 ~~~
 {: .source}
 
-### Panes (splits)
+## Panes (splits)
 
 ~~~
     %  vertical split
@@ -121,20 +179,30 @@ In tmux, hit the prefix `CTRL+b` and then:
 ~~~
 {: .source}
 
-### Copy model
+## Copy model
 
 ~~~
     [  Copy mode
 ~~~
 {: .source}
 
-### Others
+## Others
 
 ~~~
     d  detach
     t  big clock
     ?  list shortcuts
     :  prompt
+~~~
+{: .source}
+
+## Command line arguments for tmux
+
+~~~
+    tmux ls                       list sessions
+    tmux new                      new session
+    tmux rename -t <ID> new_name  rename a session
+    tmux kill-session -t <ID>     kill session by target
 ~~~
 {: .source}
 
@@ -153,18 +221,11 @@ In tmux, hit the prefix `CTRL+b` and then:
 > 5. Detach from your current session, close your terminal and reconnect.
 > Log in again on Spruce and reattach your session.
 >
-> 6. Now that you are again in you original session, create a new sesssion.
-> You will be automatically redirected there. Leave your session, check the sessions with:
->
->~~~
->tmux ls
->~~~
->{: .source}
+> 6. Now that you are again in you original session, create a new session.
+> You will be automatically redirected there. Leave your session, check the list of sessions.
 >
 > 7. Kill the second session (session ID is 1)
->~~~
->tmux kill-session -t 1
->~~~
+>
 >{: .source}
 {: .challenge}
 
