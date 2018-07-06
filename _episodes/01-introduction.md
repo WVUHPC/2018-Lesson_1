@@ -12,11 +12,18 @@ keypoints:
 - "To get X Window on Windows use for example MobaXTerm"
 ---
 
+The most common way of accessing a HPC computer cluster is via a remote shell.
+A remote shell allow you to execute commands on another machine same as you do sitting on front of it. A remote shell is good because it also allow other people to do the same, so you get a shared resource being utilized by several users at the same time.
+
+All that you need on your computer is a SSH client, a program on your computer that allow you to connect to the SSH server from another computer. In the old times, people used to create a remote shell using Telnet. SSH provides a secure channel over an unsecured network such as internet. SSH offers similar capabilities to telnet but adding encryption, so all data sent and received between your computer and the remote host is encrypted in such a way that only your computer and the remote computer can see the data. If you want to know more about Secure Shell:
+
+https://en.wikipedia.org/wiki/Secure_Shell
+
+
 # ssh
 
-Currently WVU has two clusters for HPC, mountaineer and spruce. You can access them using SSH.
-SSH provides a secure channel over an unsecured network such as internet.
-Both Linux and macOS commonly include the SSH client by default. On Windows machines you can use a free application called PuTTY or MobaXTerm.
+Currently WVU has two clusters for HPC, Mountaineer and Spruce. You can access them using SSH.
+Both Linux and macOS include an SSH client by default. On Windows machines you need to install an external application. A free application called [PuTTY](https://www.putty.org) offers a simple SSH client and [MobaXTerm](https://mobaxterm.mobatek.net) offers you a full featured SSH client plus the ability to open X11 windows from the remote machine.
 
 To connect to Mountaineer use:
 
@@ -25,7 +32,7 @@ ssh <username>@mountaineer.hpc.wvu.edu
 ~~~
 {: .source}
 
-For Spruce
+For Spruce:
 
 ~~~
 ssh <username>@spruce.hpc.wvu.edu
@@ -33,6 +40,18 @@ ssh <username>@spruce.hpc.wvu.edu
 {: .source}
 
 Once you enter on the system, you can start typing commands. You can open several connections simultaneously. Each connection is independent of each other.
+
+> ## Entering on Spruce
+>
+> Using the username and password given to you for this training or using your own account login into Spruce and execute the command hostname.
+> What do you see on the terminal?
+>
+> > ## Solution
+>>  You should get:
+>>
+>> spruce.hpc.wvu.edu
+> {: .solution}
+{: .challenge}
 
 ## tmux
 
