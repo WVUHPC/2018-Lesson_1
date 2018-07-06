@@ -106,10 +106,12 @@ This procedure will not work if you need to use DUO authentication, for example 
 >
 > RSA key will work everywhere. ECDSA support is newer, so some old client or server may have trouble with ECDSA keys. DSA used to work everywhere, as per the SSH standard, but recently OpenSSH 7.0 and higher no longer accept DSA keys by default.
 >
+> [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
 >
 > ECDSA is computationally lighter, a smaller key will give you the same level of protection than a much larger RSA key.
 >
-> Right now, if you use large enough keys (2048 bits for RSA or DSA, 256 bits for ECDSA) you are considered safe. Key size is specified with the -b parameter. >
+> Right now, if you use large enough keys (2048 bits for RSA or DSA, 256 bits for ECDSA) you are considered safe. Key size is specified with the -b parameter.
+>
 {: .callout}
 
 # tmux
