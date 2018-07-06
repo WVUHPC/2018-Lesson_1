@@ -41,9 +41,10 @@ ssh <username>@spruce.hpc.wvu.edu
 
 Once you enter on the system, you can start typing commands. You can open several connections simultaneously. Each connection is independent of each other.
 
-> ## Entering on Spruce
+> ## Login on Spruce
 >
 > Using the username and password given to you for this training or using your own account login into Spruce and execute the command hostname.
+>
 > What do you see on the terminal?
 >
 > > ## Solution
@@ -55,12 +56,13 @@ Once you enter on the system, you can start typing commands. You can open severa
 
 ## tmux
 
+For normal usage, the terminal that you get is probably enough.
 Power users can benefit from a terminal multiplexer such as tmux.
-tmux is a terminal multiplexer.
-It lets you switch easily between several programs in one terminal, detach them
- (they keep running in the background) and reattach them to a different terminal.
 
-tmux allows users to keep several virtual windows and panels open from a single connection. It offers also preserve the terminal status in case of disconnection from the server.
+It lets you switch easily between several virtual terminals organized in panels, windows and sessions. One big advantage of terminal multiplexing is that all those virtual terminals are still alive when you logout from the system.
+You can work for a while remotely, close the connection and reconnect again, attaching your tmux session and continuing exactly where you left your work.
+
+tmux allows users to keep several sessions. You can attach only one session each time. Each session can have several windows, you can create several windows but it is better not to have more than 10. Each window can be split in panes you can move around between the different panes on a window, the different windows of a session and you can leave one session and reattach another one.
 
 To use tmux, first connect to the server and execute the command
 
@@ -135,5 +137,37 @@ In tmux, hit the prefix `CTRL+b` and then:
     :  prompt
 ~~~
 {: .source}
+
+> ## Excercise: Using tmux
+>
+> Using the tables above follow this simple challenge with tmux
+>
+> 1. Log in to Spruce and create a tmux session
+>
+> 2. Inside the session create a new window
+>
+> 3. Go back to window 0 and create a horizontal pane and inside on of those panes create a vertical pane.
+>
+> 4. Create a big clock pane
+>
+> 5. Detach from your current session, close your terminal and reconnect.
+> Log in again on Spruce and reattach your session.
+>
+> 6. Now that you are again in you original session, create a new sesssion.
+> You will be automatically redirected there. Leave your session, check the sessions with:
+>
+> ~~~
+> tmux ls
+> ~~~
+> {: .source}
+>
+> 6. Kill all sessions with
+> ~~~
+> tmux kill-session -t 1
+> ~~~
+> {: .source}
+{: .challenge}
+
+Now we are ready to learn the first commands on our next episode.
 
 {% include links.md %}
