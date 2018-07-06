@@ -156,16 +156,16 @@ In tmux, hit the prefix `CTRL+b` and then:
 > 6. Now that you are again in you original session, create a new sesssion.
 > You will be automatically redirected there. Leave your session, check the sessions with:
 >
-> ~~~
-> tmux ls
-> ~~~
-> {: .source}
+>~~~
+>tmux ls
+>~~~
+>{: .source}
 >
-> 6. Kill the second session (session ID is 1)
-> ~~~
-> tmux kill-session -t 1
-> ~~~
-> {: .source}
+> 7. Kill the second session (session ID is 1)
+>~~~
+>tmux kill-session -t 1
+>~~~
+>{: .source}
 {: .challenge}
 
 Now we are ready to learn the first commands on our next episode.
