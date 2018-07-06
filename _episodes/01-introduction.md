@@ -161,7 +161,7 @@ In tmux, hit the prefix `CTRL+b` and then:
 > ~~~
 > {: .source}
 >
-> 6. Kill all sessions with
+> 6. Kill the second session (session ID is 1)
 > ~~~
 > tmux kill-session -t 1
 > ~~~
