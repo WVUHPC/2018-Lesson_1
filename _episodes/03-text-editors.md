@@ -423,10 +423,11 @@ To cut-and-paste or copy-and-paste:
 > Make a copy of that file and edit the copy.
 >
 > 1. Remove the all first lines using your preferred editor. By the way, if you want to read that file in R for Data Analysis or in Python using Pandas, you do not need to do this, for example in R you can read the file like:
->~~~
+>
+> ~~~
 > dat<-read.table("nuclear.txt", skip=41, header=TRUE)
->~~~
->{: .source}
+> ~~~
+> {: .source}
 >
 > 2. Sometimes you want to cut columns, this time we will cut "pr", "ne", "ct", and  "bw". Use the technique for your editor to do this without going into the painful operation of doing that line by line. You can do this with both emacs and vi. Nano do not offer that capability
 >
