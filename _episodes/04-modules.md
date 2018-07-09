@@ -16,9 +16,9 @@ The modules software package allows you to dynamically modify your user environm
 
 Each modulefile contains the information needed to configure the shell for an application. After the modules software package is initialized, the environment can be modified on a per-module basis using the module command, which interprets modulefiles. Typically, modulefiles instruct the module command to alter or set shell environment variables such as PATH, MANPATH, and others. The modulefiles can be shared by many users on a system, and users can have their own collection to supplement or replace the shared modulefiles.
 
-As a user, you can add and remove modulefiles from the current environment. The environment changes contained in a modulefile can also be summarized through the module show command. You are welcome to change modules in your .bashrc or .cshrc, but be aware that some modules print information (to standard error) when loaded, this should be directed to a file or /dev/null when loaded in an initialization script.
+As a user, you can add and remove modulefiles from the current environment. The environment changes contained in a modulefile can also be summarized through the module show command. You are welcome to change modules in your `.bashrc` or `.cshrc`, but be aware that some modules print information (to standard error) when loaded, this should be directed to a file or /dev/null when loaded in an initialization script.
 
-More information on modules can be found by typing module help on the NICS systems. Ignore the module init* commands – these modify a .modulerc file which is incompatible with the way NICS modules are set up. If you run into any issues, remove any .modulerc and log in again.
+More information on modules can be found by typing module help on the NICS systems. Ignore the module init* commands – these modify a `.modulerc` file which is incompatible with the way NICS modules are set up. If you run into any issues, remove any `.modulerc` and log in again.
 
 ## Basic arguments
 
@@ -39,10 +39,10 @@ The following table lists the most common module command options
 The basic procedure is to locate modules on a folder accessible by relevant users
 and add the variable `MODULEPATH` to your `.bashrc`
 
-MODULEPATH controls the path that the module command searches when looking for
+`MODULEPATH` controls the path that the module command searches when looking for
 modulefiles.  
 Typically, it is set  to a  default  value by the bootstrap procedure.  
-MODULEPATH can be set using ’module use’ or by the module initialization
+`MODULEPATH` can be set using ’module use’ or by the module initialization
 script to search group or personal modulefile directories before  or  after
 the master modulefile directory.
 
