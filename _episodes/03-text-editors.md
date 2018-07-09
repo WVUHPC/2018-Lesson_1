@@ -183,8 +183,6 @@ The number of commands for Emacs is large, here the basic list of commands for e
 ~~~
 {: .source}
 
-
-
 ### Formatting
 
 ~~~
@@ -209,11 +207,23 @@ The number of commands for Emacs is large, here the basic list of commands for e
 ### Case Change
 
 ~~~
- uppercase word M-u
- lowercase word M-l
- capitalize word M-c
- uppercase region C-x C-u
- lowercase region C-x C-l
+ uppercase word          M-u
+ lowercase word          M-l
+ capitalize word         M-c
+ uppercase region        C-x C-u
+ lowercase region        C-x C-l
+~~~
+{: .source}
+
+### Rectangles
+
+To specify a rectangle for a command to work on, set the mark at one corner and point at the opposite corner. The rectangle thus specified is called the region-rectangle. If point and the mark are in the same column, the region-rectangle is empty. If they are in the same line, the region-rectangle is one line high.
+
+~~~
+Kill the text of the region-rectangle                                   C-x r k
+Yank the last killed rectangle                                          C-x r y
+Insert blank space to fill the space of the region-rectangle            C-x r o
+Clear the region-rectangle by replacing all of its contents with spaces C-x r c
 ~~~
 {: .source}
 
@@ -257,7 +267,7 @@ Note: The cursor moves to bottom of screen whenever a colon (:) is typed. This t
 
 ### Moving the Cursor
 
-Unlike many of the PC and MacIntosh editors, the mouse does not move the cursor within the vi editor screen (or window). You must use the the key commands listed below. On some UNIX platforms, the arrow keys may be used as well; however, since vi was designed with the Qwerty keyboard (containing no arrow keys) in mind, the arrow keys sometimes produce strange effects in vi and should be avoided.
+Unlike many of the PC and Mac editors, the mouse does not move the cursor within the vi editor screen (or window). You must use the the key commands listed below. On some UNIX platforms, the arrow keys may be used as well; however, since vi was designed with the Qwerty keyboard (containing no arrow keys) in mind, the arrow keys sometimes produce strange effects in vi and should be avoided.
 If you go back and forth between a PC environment and a UNIX environment, you may find that this dissimilarity in methods for cursor movement is the most frustrating difference between the two.
 In the table below, the symbol `"^"` before a letter means that the `CTRL` key should be held down while the letter key is pressed.
 
@@ -394,5 +404,48 @@ These commands permit you to input and output files other than the named file wi
  :w! prevfile<Return>	        write current contents over a pre-existing file named prevfile
 ~~~
 {: .source}
+
+### Copy and Paste regions of data
+
+You can select both lines and rectangles areas and copy an paste them.
+To cut-and-paste or copy-and-paste:
+
+1. Position the cursor at the beginning of the text you want to cut/copy.
+2. Press v to begin character-based visual selection, or V to select whole lines, or Ctrl-v or Ctrl-q to select a block.
+3. Move the cursor to the end of the text to be cut/copied. While selecting text, you can perform searches and other advanced movement.
+4. Press d (delete) to cut, or y (yank) to copy.
+5. Move the cursor to the desired paste location.
+6. Press p to paste after the cursor, or P to paste before.
+
+> ## Exercise: Editing a file
+>
+> On "1.IntroHPC/3.Editors" you will find a file called nuclear.txt
+> Make a copy of that file and edit the copy.
+>
+> 1. Remove the all first lines using your preferred editor. By the way, if you want to read that file in R for Data Analysis or in Python using Pandas, you do not need to do this, for example in R you can read the file like:
+>~~~
+> dat<-read.table("nuclear.txt", skip=41, header=TRUE)
+>~~~
+>{: .source}
+>
+> 2. Sometimes you want to cut columns, this time we will cut "pr", "ne", "ct", and  "bw". Use the technique for your editor to do this without going into the painful operation of doing that line by line. You can do this with both emacs and vi. Nano do not offer that capability
+>
+> 3. Convert the header to uppercase. Both emacs and vi can do that with a few keystrokes without actually entering the values by hand.
+>
+>{: .source}
+{: .challenge}
+
+> ## Editor war
+>
+> In the hacker culture, there is a well known rivalry between users of the Emacs and vi (usually Vim) text editors. This rivalry usually takes the form of jokes between adepts of each editor. You can read more about this on:
+>
+> [https://en.wikipedia.org/wiki/Editor_war](Editor War)
+>
+> Sometimes you have to use the vi even if you are used to emacs. The reverse
+> never happens because vi is always available on a Unix system. A translation table could be handy.
+>
+> [http://danzig.jct.ac.il/unix_class/emacs-vi-Commands.html](Emacs and Vi Commands)
+>
+{: .callout}
 
 {% include links.md %}
