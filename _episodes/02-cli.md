@@ -192,7 +192,7 @@ man <COMMAND>
 ~~~
 {: .source}
 
-> ### Output of entire files
+> ## Output of entire files
 >
 > ~~~
 > cat                    Concatenate and write files
@@ -215,7 +215,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Output of parts of files
+> ## Output of parts of files
 >
 > ~~~
 > head                   Output the first part of files
@@ -226,7 +226,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Summarizing files
+> ## Summarizing files
 >
 > ~~~
 > wc                     Print newline, word, and byte counts
@@ -239,7 +239,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Operating on sorted files
+> ## Operating on sorted files
 >
 > ~~~
 > sort                   Sort text files
@@ -252,7 +252,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Operating on fields
+> ## Operating on fields
 >
 > ~~~
 > cut                    Print selected parts of lines
@@ -262,7 +262,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Operating on characters
+> ## Operating on characters
 >
 > ~~~
 > tr                     Translate, squeeze, and/or delete characters
@@ -283,7 +283,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Basic operations
+> ## Basic operations
 >
 > ~~~
 > cp                     Copy files and directories
@@ -296,7 +296,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Special file types
+> ## Special file types
 >
 > ~~~
 > link                   Make a hard link via the link syscall
@@ -311,7 +311,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Changing file attributes
+> ## Changing file attributes
 >
 > ~~~
 > chown                  Change file owner and group
@@ -322,7 +322,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Disk usage
+> ## Disk usage
 >
 > ~~~
 > df                     Report file system disk space usage
@@ -334,7 +334,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Printing text
+> ## Printing text
 >
 > ~~~
 > echo                   Print a line of text
@@ -344,7 +344,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Conditions
+> ## Conditions
 >
 > ~~~
 > false                  Do nothing, unsuccessfully
@@ -356,7 +356,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### File name manipulation
+> ## File name manipulation
 >
 > ~~~
 > basename               Strip directory and suffix from a file name
@@ -368,7 +368,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Working context
+> ## Working context
 >
 > ~~~
 > pwd                    Print working directory
@@ -379,7 +379,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### User information
+> ## User information
 >
 > ~~~
 > id                     Print user identity
@@ -392,7 +392,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### System context
+> ## System context
 >
 > ~~~
 > arch                   Print machine hardware name
@@ -406,7 +406,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Modified command
+> ## Modified command
 >
 > ~~~
 > chroot                 Run a command with a different root directory
@@ -419,7 +419,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Process control
+> ## Process control
 >
 > ~~~
 > kill                   Sending a signal to processes
@@ -435,7 +435,7 @@ man <COMMAND>
 > {: .source}
 {: .callout}
 
-> ### Numeric operations
+> ## Numeric operations
 >
 > ~~~
 > factor                 Print prime factors
