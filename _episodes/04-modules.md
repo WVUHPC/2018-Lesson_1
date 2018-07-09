@@ -223,7 +223,6 @@ libraries/hdf5/1.8.13_intel               xalt/0.6.0
 >
 >    Now it should be clearer why modules is an important feature of any HPC infrastructure as it allows you to use several compilers, libraries and packages in different versions. On a normal computer, you usually have just one.
 >
->{: .source}
 {: .challenge}
 
 {% include links.md %}
