@@ -177,7 +177,7 @@ libraries/hdf5/1.8.13_intel               xalt/0.6.0
 >
 > 1. Check the modules that you currently have and clean (purge) your environment from them. Check again and confirm that no module is loaded.
 >
-> 2. Check which versions of Python, R and GCC you have from the RHEL itself. Try to get and idea of how old those three components are. For python and R all that you have to do is enter the corresponding command ('''R''' or '''python''). For GCC you need to use '''gcc --version''' and see the date of those programs.
+> 2. Check which versions of Python, R and GCC you have from the RHEL itself. Try to get and idea of how old those three components are. For python and R all that you have to do is enter the corresponding command (`R` or `python`). For GCC you need to use `gcc --version` and see the date of those programs.
 >
 > 3. Now lets get newer version of those 3 components by loading the corresponding modules. Search for the module for Python 3.6.0 and R 3.4.1 and GCC 6.3.0 and load the corresponding modules. To make things easier, you can use check the availability of modules just in the compilers section.
 >
@@ -186,9 +186,9 @@ libraries/hdf5/1.8.13_intel               xalt/0.6.0
 > ~~~
 > {: .source}
 >
-> 4. Check again which version of those 3 components you have now. Notice that in the case of Python 3, the command python still goes towards the old python 2.6.6, as the python 3.x interpreter is not backwards compatible with python 2.x the new command is called '''python3''', check its version by entering the command.
+> 4. Check again which version of those 3 components you have now. Notice that in the case of Python 3, the command python still goes towards the old python 2.6.6, as the python 3.x interpreter is not backwards compatible with python 2.x the new command is called `python3`, check its version by entering the command.
 >
-> 5. Go back and purge all the modules from your environment. We will now explore why is important to use a recent compiler. Try to compile the code at '''1.IntroHPC/4.Modules/lambda_c++14.cpp'''. Go to the folder and execute:
+> 5. Go back and purge all the modules from your environment. We will now explore why is important to use a recent compiler. Try to compile the code at `1.IntroHPC/4.Modules/lambda_c++14.cpp`. Go to the folder and execute:
 >
 > ~~~
 > g++ lambda_c++14.cpp
