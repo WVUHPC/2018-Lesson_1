@@ -9,7 +9,9 @@ objectives:
 keypoints:
 - "Use ssh to connect. Use ssh -X to get X11 Forwarding"
 - "On windows you can use PuTTY"
-- "To get X Window on Windows use for example MobaXTerm"
+- "To get X Window on Windows use MobaXTerm"
+- "tmux is a terminal multiplexer that can boost your interaction with
+HPC cluster"
 ---
 
 The most common way of accessing a HPC computer cluster is via a remote shell.
@@ -47,7 +49,7 @@ Once you enter on the system, you can start typing commands. You can open severa
 >
 > What do you see on the terminal?
 >
-> > ## Solution
+>> ## Solution
 >>  You should get:
 >>
 >> spruce.hpc.wvu.edu
@@ -106,9 +108,7 @@ This procedure will not work if you need to use DUO authentication, for example 
 >
 > RSA key will work everywhere. ECDSA support is newer, so some old client or server may have trouble with ECDSA keys. DSA used to work everywhere, as per the SSH standard, but recently OpenSSH 7.0 and higher no longer accept DSA keys by default.
 >
-> [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
->
-> ECDSA is computationally lighter, a smaller key will give you the same level of protection than a much larger RSA key.
+> [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) is computationally lighter, a smaller key will give you the same level of protection than a much larger RSA key.
 >
 > Right now, if you use large enough keys (2048 bits for RSA or DSA, 256 bits for ECDSA) you are considered safe. Key size is specified with the -b parameter.
 >
@@ -208,7 +208,7 @@ In tmux, hit the prefix `CTRL+b` and then:
 ~~~
 {: .source}
 
-> ## Excercise: Using tmux
+> ## Exercise: Using tmux
 >
 > Using the tables above follow this simple challenge with tmux
 >
