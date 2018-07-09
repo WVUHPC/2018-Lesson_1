@@ -76,35 +76,35 @@ The number of commands for Emacs is large, here the basic list of commands for e
 
 ~~~
  suspend Emacs (or iconify it under X) C-z
- exit Emacs permanently C-x C-c
+ exit Emacs permanently                C-x C-c
 ~~~
 {: .source}
 
 ### Files
 
 ~~~
- read a file into Emacs C-x C-f
- save a file back to disk C-x C-s
- save all files C-x s
+ read a file into Emacs                           C-x C-f
+ save a file back to disk                         C-x C-s
+ save all files                                   C-x s
  insert contents of another file into this buffer C-x i
- replace this file with the file you really want C-x C-v
- write buffer to a specified file C-x C-w
- toggle read-only status of buffer C-x C-q
+ replace this file with the file you really want  C-x C-v
+ write buffer to a specified file                 C-x C-w
+ toggle read-only status of buffer                C-x C-q
 ~~~
 {: .source}
 
 ### Incremental Search
 
 ~~~
- search forward C-s
- search backward C-r
- regular expression search C-M-s
+ search forward                    C-s
+ search backward                   C-r
+ regular expression search         C-M-s
  reverse regular expression search C-M-r
- select previous search string M-p
- select next later search string M-n
- exit incremental search RET
- undo effect of last character DEL
- abort current search C-g
+ select previous search string     M-p
+ select next later search string   M-n
+ exit incremental search           RET
+ undo effect of last character     DEL
+ abort current search              C-g
  Use C-s or C-r again to repeat the search in either direction. If
  Emacs is still searching, C-g cancels only the part not matched.
 ~~~
@@ -155,22 +155,22 @@ The number of commands for Emacs is large, here the basic list of commands for e
 ### Marking
 
 ~~~
- set mark here C-@ or C-SPC
+ set mark here           C-@ or C-SPC
  exchange point and mark C-x C-x
  set mark arg words away M-@
- mark paragraph M-h
- mark page C-x C-p
- mark sexp C-M-@
- mark function C-M-h
- mark entire buffer C-x h
+ mark paragraph          M-h
+ mark page               C-x C-p
+ mark sexp               C-M-@
+ mark function           C-M-h
+ mark entire buffer      C-x h
 ~~~
 {: .source}
 
 ### Query Replace
 
 ~~~
- interactively replace a text string M-%
- using regular expressions M-x query-replace-regexp
+ interactively replace a text string       M-%
+ using regular expressions                 M-x query-replace-regexp
  Valid responses in query-replace mode are
 
  replace this one, go on to next SPC or y
@@ -179,28 +179,28 @@ The number of commands for Emacs is large, here the basic list of commands for e
  replace all remaining matches !
  back up to the previous match ^
  exit query-replace RET
- enter recursive edit (C-M-c to exit) C-r
+ enter recursive edit (C-M-c to exit)      C-r
 ~~~
 {: .source}
 
 ### Formatting
 
 ~~~
- indent current line (mode-dependent) TAB
- indent region (mode-dependent) C-M-\
- indent sexp (mode-dependent) C-M-q
- indent region rigidly arg columns C-x TAB
- indent for comment M-;
- insert newline after point C-o
- move rest of line vertically down C-M-o
- delete blank lines around point C-x C-o
+ indent current line (mode-dependent)     TAB
+ indent region (mode-dependent)           C-M-\
+ indent sexp (mode-dependent)             C-M-q
+ indent region rigidly arg columns        C-x TAB
+ indent for comment                       M-;
+ insert newline after point               C-o
+ move rest of line vertically down        C-M-o
+ delete blank lines around point          C-x C-o
  join line with previous (with arg, next) M-^
- delete all white space around point M-\
- put exactly one space at point M-SPC
- fill paragraph M-q
- set fill column to arg C-x f
- set prefix each line starts with C-x .
- set face M-o
+ delete all white space around point      M-\
+ put exactly one space at point           M-SPC
+ fill paragraph                           M-q
+ set fill column to arg                   C-x f
+ set prefix each line starts with         C-x .
+ set face                                 M-o
 ~~~
 {: .source}
 
@@ -273,16 +273,16 @@ In the table below, the symbol `"^"` before a letter means that the `CTRL` key s
 
 ~~~
  j or <Return> [or down-arrow]	   move cursor down one line
- k [or up-arrow]	           move cursor up one line
+ k [or up-arrow]	                 move cursor up one line
  h or <Backspace> [or left-arrow]  move cursor left one character
  l or <Space> [or right-arrow]	   move cursor right one character
- 0 (zero)	                   move cursor to start of current line (the one with the cursor)
- $	                           move cursor to end of current line
- w	                           move cursor to beginning of next word
- b	                           move cursor back to beginning of preceding word
- :0<Return> or 1G	           move cursor to first line in file
- :n<Return> or nG	           move cursor to line n
- :$<Return> or G	           move cursor to last line in file
+ 0 (zero)	                         move cursor to start of current line (the one with the cursor)
+ $	                               move cursor to end of current line
+ w	                               move cursor to beginning of next word
+ b	                               move cursor back to beginning of preceding word
+ :0<Return> or 1G	                 move cursor to first line in file
+ :n<Return> or nG	                 move cursor to line n
+ :$<Return> or G	                 move cursor to last line in file
 ~~~
 {: .source}
 
@@ -439,12 +439,12 @@ To cut-and-paste or copy-and-paste:
 >
 > In the hacker culture, there is a well known rivalry between users of the Emacs and vi (usually Vim) text editors. This rivalry usually takes the form of jokes between adepts of each editor. You can read more about this on:
 >
-> [https://en.wikipedia.org/wiki/Editor_war](Editor War)
+> [Editor War](https://en.wikipedia.org/wiki/Editor_war)
 >
 > Sometimes you have to use the vi even if you are used to emacs. The reverse
 > never happens because vi is always available on a Unix system. A translation table could be handy.
 >
-> [http://danzig.jct.ac.il/unix_class/emacs-vi-Commands.html](Emacs and Vi Commands)
+> [Emacs and Vi Commands](http://danzig.jct.ac.il/unix_class/emacs-vi-Commands.html)
 >
 {: .callout}
 
