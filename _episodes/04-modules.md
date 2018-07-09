@@ -14,7 +14,7 @@ keypoints:
 
 The modules software package allows you to dynamically modify your user environment by using “modulefiles.”
 
-Each modulefile contains the information needed to configure the shell for an application. After the modules software package is initialized, the environment can be modified on a per-module basis using the module command, which interprets modulefiles. Typically, modulefiles instruct the module command to alter or set shell environment variables such as PATH, MANPATH, and others. The modulefiles can be shared by many users on a system, and users can have their own collection to supplement or replace the shared modulefiles.
+Each modulefile contains the information needed to configure the shell for an application. After the modules software package is initialized, the environment can be modified on a per-module basis using the module command, which interprets modulefiles. Typically, modulefiles instruct the module command to alter or set shell environment variables such as `PATH`, `MANPATH`, and others. The modulefiles can be shared by many users on a system, and users can have their own collection to supplement or replace the shared modulefiles.
 
 As a user, you can add and remove modulefiles from the current environment. The environment changes contained in a modulefile can also be summarized through the module show command. You are welcome to change modules in your `.bashrc` or `.cshrc`, but be aware that some modules print information (to standard error) when loaded, this should be directed to a file or /dev/null when loaded in an initialization script.
 
@@ -181,41 +181,42 @@ libraries/hdf5/1.8.13_intel               xalt/0.6.0
 >
 > 3. Now lets get newer version of those 3 components by loading the corresponding modules. Search for the module for Python 3.6.0 and R 3.4.1 and GCC 6.3.0 and load the corresponding modules. To make things easier, you can use check the availability of modules just in the compilers section.
 >
-> ~~~
-> module avail compilers
-> ~~~
-> {: .source}
+>  ~~~
+>  module avail compilers
+>  ~~~
+>  {: .source}
 >
 > 4. Check again which version of those 3 components you have now. Notice that in the case of Python 3, the command python still goes towards the old python 2.6.6, as the python 3.x interpreter is not backwards compatible with python 2.x the new command is called `python3`, check its version by entering the command.
 >
 > 5. Go back and purge all the modules from your environment. We will now explore why is important to use a recent compiler. Try to compile the code at `1.IntroHPC/4.Modules/lambda_c++14.cpp`. Go to the folder and execute:
 >
-> ~~~
-> g++ lambda_c++14.cpp
-> ~~~
-> {: .source}
+>  ~~~
+>  g++ lambda_c++14.cpp
+>  ~~~
+>  {: .source}
 >
 > At this point you should have receive a list of errors, that is because even if the code is C++ it uses elements of the language that were not present at that time on C++ Specification. The code actually uses C++14 and only recent versions of GCC allows for these declarations. Lets check how many GCC compilers we have available on Spruce.
 >
-> ~~~
-> module avail compilers/gcc
-> ~~~
-> {: .source}
+>  ~~~
+>  module avail compilers/gcc
+>  ~~~
+>  {: .source}
 >
 > Now from that list, start loading and trying to compile the code as indicated above. Which versions of GCC allow you to compile the code? Try also the Intel compilers. In the case of intel the command to compile the code is
-> ~~~
-> icpc lambda_c++14.cpp
-> ~~~
-> {: .source}
+>
+>  ~~~
+>  icpc lambda_c++14.cpp
+>  ~~~
+>  {: .source}
 >
 > Try with all the Intel compilers, it will fail with all of them. That is because the default standard for the Intel C++ compiler is not C++14, you need to declare it explicitly and only for Intel Compiler suite 17.0.1
 >
-> ~~~
-> icpc lambda_c++14.cpp -std=c++14
-> ~~~
-> {: .source}
+>  ~~~
+>  icpc lambda_c++14.cpp -std=c++14
+>  ~~~
+>  {: .source}
 >
->Now it should be clearer why modules is an important feature of any HPC infrastructure as it allows you to use several compilers, libraries and packages in different versions. On a normal computer, you usually have just one.
+> Now it should be clearer why modules is an important feature of any HPC infrastructure as it allows you to use several compilers, libraries and packages in different versions. On a normal computer, you usually have just one.
 >{: .source}
 {: .challenge}
 
