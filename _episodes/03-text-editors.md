@@ -171,14 +171,15 @@ The number of commands for Emacs is large, here the basic list of commands for e
 ~~~
  interactively replace a text string       M-%
  using regular expressions                 M-x query-replace-regexp
- Valid responses in query-replace mode are
 
- replace this one, go on to next SPC or y
- replace this one, don’t move ,
- skip to next without replacing DEL or n
- replace all remaining matches !
- back up to the previous match ^
- exit query-replace RET
+ Valid responses in query-replace mode are:
+
+ replace this one, go on to next           SPC or y
+ replace this one, don’t move              ,
+ skip to next without replacing            DEL or n
+ replace all remaining matches             !
+ back up to the previous match             ^
+ exit query-replace                        RET
  enter recursive edit (C-M-c to exit)      C-r
 ~~~
 {: .source}
