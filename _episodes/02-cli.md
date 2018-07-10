@@ -446,7 +446,7 @@ man <COMMAND>
 
 > ## Exercise: Using the Command Line Interface
 >
-> 1. Create 4 folders A, B, C, D and inside each of them create a three more: X, Y and Z. At the end you should have 12 subfolders. Use the command tree to ensure you create the correct tree.
+> 1. Create 4 folders `A`, `B`, `C`, `D` and inside each of them create a three more: `X`, `Y` and `Z`. At the end you should have 12 subfolders. Use the command tree to ensure you create the correct tree.
 >
 >> ## Solution
 >>  You should get:
@@ -472,8 +472,8 @@ man <COMMAND>
 > {: .solution}
 >
 > 2. Lets copy some files in those folders. From the data folder
->"1.IntroHPC/1.CLI", there are 3 files "t17.in", "t17.files" and "14si.pspnc".
->Using the command line tools create copies of "t17.in" and "t17.files" inside each of those folders and symbolic link for "14si.pspnc". Both "t17.in" and "t17.files" are text files that we want to edit, but "14si.pspnc" is just a relatively big file that we just need to use for the simulation, we do not want to make copies of if, just symbolic links and save disk space.
+>`1.IntroHPC/1.CLI`, there are 3 files `t17.in`, `t17.files` and `14si.pspnc`.
+>Using the command line tools create copies of "t17.in" and "t17.files" inside each of those folders and symbolic link for `14si.pspnc`. Both "t17.in" and "t17.files" are text files that we want to edit, but `14si.pspnc` is just a relatively big file that we just need to use for the simulation, we do not want to make copies of if, just symbolic links and save disk space.
 >{: .source}
 {: .challenge}
 
