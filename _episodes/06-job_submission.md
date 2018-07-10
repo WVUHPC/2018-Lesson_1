@@ -10,26 +10,45 @@ keypoints:
 - "It is a good idea to keep aliases to common torque commands for easy execution."
 ---
 
-## TORQUE
+When you are using your own computer, you execute your calculations and you are responsible of not overloading the machine with more workload that the machine can actually process efficiently. Also, you probably have only one machine to work, if you have several you login individually on each and execute calculations by directly running calculations.
 
-TORQUE is a resource management system for submitting and controlling jobs on
-supercomputers, clusters, and grids.
-TORQUE manages jobs that users submit to various queues on a computer system,
-each queue representing a group of resources with attributes necessary
-for the queue's jobs.
+On a shared resource like an HPC cluster, things are very different. You and several others, maybe hundreds are competing for getting their calculations done. A Resource Manager take care of receiving job submissions. From the other side a Job Scheduler is in charge of associate jobs with the appropriated resources and trying to maximize and objective function such as total utilization constrained by priorities and the best balance between the resources requested and resources available.
 
-This is a list of frequently used TORQUE commands:
+# TORQUE Resource and Queue Manager
 
-| Command | Purpose |
-|:--------|:--------|
-| qsub	  | Submit a job. |
-| qstat	  | Monitor the status of a job. |
-| qdel	  | Terminate a job prior to its completion. |
+Terascale Open-source Resource and QUEue Manager (TORQUE) is a distributed resource manager providing control over batch jobs and distributed compute nodes. TORQUE can be integrated both, commercial and non-commercial Schedulers. In the case of Mountaineer and Spruce TORQUE is used with the commercial Moab Scheduler.
+
+This is a list of TORQUE commands:
+
+|Command	  |Description|
+|:----------|:----------|
+|`momctl`	  |Manage/diagnose MOM (node execution) daemon|
+|`pbsdsh`	  |Launch tasks within a parallel job|
+|`pbsnodes`	|View/modify batch status of compute nodes|
+|`qalter`	  |Modify queued batch jobs|
+|`qchkpt`	  |Checkpoint batch jobs|
+|`qdel`	    |Delete/cancel batch jobs|
+|`qgpumode`	|Specifies new mode for GPU|
+|`qgpureset`|Reset the GPU|
+|`qhold`	  |Hold batch jobs|
+|`qmgr`	    |Manage policies and other batch configuration|
+|`qmove`	  |Move batch jobs|
+|`qorder`	  |Exchange order of two batch jobs in any queue|
+|`qrerun`	  |Rerun a batch job|
+|`qrls`	    |Release batch job holds|
+|`qrun`	    |Start a batch job|
+|`qsig`	    |Send a signal to a batch job|
+|`qstat`	  |View queues and jobs|
+|`qsub`	    |Submit jobs|
+|`qterm`	  |Shutdown pbs server daemon|
+|`tracejob`	|Trace job actions and states recorded in Torque logs (see Using "tracejob" to Locate Job Failures)|
+
+From those commands, a basic knowledge about `qsub`, `qstat` and `qdel` is suficient for most purposes on a normal usage of the cluster.
 
 TORQUE includes numerous directives, which are used to specify resource
 requirements and other attributes for batch and interactive jobs.
 TORQUE directives can appear as header lines (lines that start with #PBS)
-in a batch job script or as command-line options to the qsub command.
+in a batch job script or as command-line options to the `qsub` command.
 
 ## Submission scripts
 
@@ -85,7 +104,7 @@ The directives are very similat to the serial case
 |:------------------|:------------|
 |#PBS -l nodes=1:ppn=16,walltime=00:30:00	| Indicates the job requires one node, using 16 processors per node, and 30 minutes of runtime. |
 
-### Job Arrays
+## Job Arrays
 
 Job array is a way to submit many jobs that can be indexed. The jobs are
 independent between them but you can submit them with a single qsub
@@ -106,7 +125,7 @@ mpirun -np <PPN number> ./a.out
 ~~~
 {: .source}
 
-### Environment variables
+## Environment variables
 
 We are using PBS_O_WORKDIR to change directory to the place where the job was submitted
 The following environment variables will be available to the batch job.
@@ -124,7 +143,7 @@ The following environment variables will be available to the batch job.
 |PBS_NODEFILE| the name of the file contain the list of nodes assigned to the job (for parallel and cluster systems). |
 |PBS_QUEUE| the name of the queue from which the job is executed. |
 
-### Montioring jobs
+## Montioring jobs
 
 To monitor the status of a queued or running job, use the qstat command from Torque
 of showq from Moab.
@@ -158,7 +177,7 @@ Moab showq offers:
 | -v	| local and full resource manager job IDs as well as partitions. |
 | -w	| only jobs associated with the specified constraint. Valid constraints include user, group, acct, class, and qos. |
 
-### Deleting jobs
+## Deleting jobs
 
 With Torque you can use `qdel`. Moab uses `mjobctl -c`. For example:
 
@@ -171,5 +190,75 @@ qdel 1045
 mjobctl -c 1045
 ~~~
 {: .source}
+
+## Prologue and Epilogue
+
+Torque provides administrators the ability to run scripts before and/or after each job executes. With such a script, you can prepare the system, perform node health checks, prepend and append text to output and error log files, cleanup systems, and so forth.
+
+You can add prologue and epilogue scripts from the command line.
+
+~~~
+qsub -l prologue=/home/user/prologue.sh,epilogue=/home/user/epilogue.sh
+~~~
+{: .bash}
+
+or adding the corresponding lines on your submission script.
+
+~~~
+#!/bin/bash
+...
+#PBS -l prologue=/home/user/prologue.sh
+#PBS -l
+...
+~~~
+{: .source}
+
+A simple `prologue.sh` can be like this:
+
+~~~
+#!/bin/sh
+echo "Prologue Args:"
+echo "Job ID: $1"
+echo "User ID: $2"
+echo "Group ID: $3"
+echo ""
+
+exit 0
+~~~
+{: .source}
+
+And a simple epilogue can be like:
+
+~~~
+#!/bin/sh
+echo "Epilogue Args:"
+echo "Job ID: $1"
+echo "User ID: $2"
+echo "Group ID: $3"
+echo "Job Name: $4"
+echo "Session ID: $5"
+echo "Resource List: $6"
+echo "Resources Used: $7"
+echo "Queue Name: $8"
+echo "Account String: $9"
+echo ""
+
+exit 0
+~~~
+{: .source}
+
+The purpose of the scripts above is to provide information about the job being stored in the same file as the standard output file created for the job. That is very useful if you want to adjust resources based on previous executions and the epilogue will store the information on file.
+
+The prologue is also useful, it can check if the proper environment for the job is present and based on the return of that script indicate Torque if the job should continue for execution, resubmit it or cancel it. The following table describes each exit code for the prologue scripts and the action taken.
+
+|Error	  |Description |Action|
+|:--------|:-----------|:-----|
+|-4	|The script timed out	              |Job will be requeued|
+|-3	|The wait(2) call returned an error	|Job will be requeued|
+|-2	|Input file could not be opened	    |Job will be requeued|
+|-1	|Permission error (script is not owned by root, or is writable by others) |Job will be requeued|
+|0	|Successful completion	            |Job will run|
+|1	|Abort exit code	                  |Job will be aborted|
+|>1	|other	                            |Job will be requeued|
 
 {% include links.md %}
