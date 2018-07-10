@@ -156,20 +156,23 @@ There a few new elements here: `${PBS_ARRAYID}`  is a variable that receives one
 >
 > Using the same 3 files from our previous exercise, prepare a set of 5 folders called `1`, `2`, `3`, `4` and `5`. The file `14si.pspnc` is better as a symbolic link as that file will never change.
 >
->  ~~~
->  $ mkdir 1 2 3 4 5
->  $ cp t17.* 1
->  $ cp t17.* 2
->  $ cp t17.* 3
->  $ cp t17.* 4
->  $ cp t17.* 5
->  $ ln -s ../14si.pspnc 1/14si.pspnc
->  $ ln -s ../14si.pspnc 2/14si.pspnc
->  $ ln -s ../14si.pspnc 3/14si.pspnc
->  $ ln -s ../14si.pspnc 4/14si.pspnc
->  $ ln -s ../14si.pspnc 5/14si.pspnc
->  ~~~
->  {: .bash}
+>> ## Solution
+>>
+>>  ~~~
+>>  $ mkdir 1 2 3 4 5
+>>  $ cp t17.* 1
+>>  $ cp t17.* 2
+>>  $ cp t17.* 3
+>>  $ cp t17.* 4
+>>  $ cp t17.* 5
+>>  $ ln -s ../14si.pspnc 1/14si.pspnc
+>>  $ ln -s ../14si.pspnc 2/14si.pspnc
+>>  $ ln -s ../14si.pspnc 3/14si.pspnc
+>>  $ ln -s ../14si.pspnc 4/14si.pspnc
+>>  $ ln -s ../14si.pspnc 5/14si.pspnc
+>>  ~~~
+>>  {: .bash}
+> {: .solution}
 >
 > Modify the submission script from the previous exercise to create a job array.
 > When execute, each job in the array receives a different value inside `${PBS_ARRAYID}`, we use the value to go into the corresponding folder and execute ABINIT there.
@@ -334,5 +337,12 @@ The prologue is also useful, it can check if the proper environment for the job 
 |0	|Successful completion	            |Job will run|
 |1	|Abort exit code	                  |Job will be aborted|
 |>1	|other	                            |Job will be requeued|
+
+> ## Exercise: Prologue and Epilogue arrays
+>
+> Add prologue and epilogue to the job array from the previous exercise
+>
+>{: .source}
+{: .challenge}
 
 {% include links.md %}

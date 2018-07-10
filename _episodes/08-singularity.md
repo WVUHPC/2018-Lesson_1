@@ -98,24 +98,27 @@ qsub runjob.pbs
 ~~~
 {: .source}
 
-## Excercises
-
-### Interactive
-
-This excercise propose the use of singularity to access RStudio 1.1 and R 3.4.3
-
-Follow the instructions for accesisng an interactive session
-
-The image is located at:
-
-~~~
-/shared/software/containers/RStudio-desktop-1.1.423_R-3.4.3.simg
-~~~
-{: .source}
-
-### Non-interactive
-
-
+> ## Exercise: Singularity
+>
+> ### Interactive
+>
+> This exercise propose the use of singularity to access RStudio 1.1 and R 3.4.3
+>
+> Follow the instructions for accessing an interactive session
+>
+> The image is located at:
+>
+> ~~~
+> /shared/software/containers/RStudio-desktop-1.1.423_R-3.4.3.simg
+> ~~~
+> {: .source}
+>
+> ### Non-interactive
+>
+> Create an small script for R and create a submission script using the Singularity image above.
+>
+>{: .source}
+{: .challenge}
 
 
 {% include links.md %}
