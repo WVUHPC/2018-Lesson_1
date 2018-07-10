@@ -345,7 +345,43 @@ $ git commit -m "Adding .gitignore"
 ~~~
 {: .output}
 
+> ## Exercise: Using git
+>
+> 1. Edit the paper, just add some text on the places indicated with TO DO. After the file is edited, run make and add and commit the files with git
+>
+> 2. Change the script, if you do not know python, change for example np.sin() by np.cos(). That should be enough for changing the data file and the figure. Do the proper arrangements to version control the changes.
+>
+>{: .source}
+{: .challenge}
 
+> ## Working with remote Git Servers
+>
+> When you use remote git servers, for example, github, gitlab  or any other git server, two basic commands are added to the process:
+>
+> `git push` is most commonly used to publish an upload local changes to a central repository. You can accumulate local commits before a push.
+>
+>
+> `git pull` command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. Waiting too much before pulling the master repository increases the chances of conflicts specially when several individuals contribute.
+>
+{: .callout}
+
+> ## Learning more about git
+>
+> There are several resources available, we just explore the bare minimum you need to know to start using a version control system.
+>
+> Software Carpentry offers an entire lesson on Git
+>
+> [Version control with git](http://swcarpentry.github.io/git-novice/)
+>
+> Atlassian is a company that offers products for code collaboration.
+> The have a very nice set of tutorials about git and their own service BitBucket.
+>
+> [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
+>
+> Github is the most popular service for Git. The have several videos and tutorials called Github Guides
+>
+> [Github Guides](https://guides.github.com)
+{: .callout}
 
 
 {% include links.md %}
