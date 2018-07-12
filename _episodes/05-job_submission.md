@@ -195,7 +195,8 @@ There a few new elements here: `${PBS_ARRAYID}`  is a variable that receives one
 >> cd ${PBS_ARRAYID}
 >>
 >> mpirun -np 4 abinit < t17.files
->>
+>> ~~~
+>> {: .bash}
 > {: .solution}
 >
 >{: .source}
@@ -259,14 +260,14 @@ Moab showq offers:
 With Torque you can use `qdel`. Moab uses `mjobctl -c`. For example:
 
 ~~~
-qdel 1045
+$ qdel 1045
 ~~~
-{: .source}
+{: .bash}
 
 ~~~
-mjobctl -c 1045
+$ mjobctl -c 1045
 ~~~
-{: .source}
+{: .bash}
 
 ## Prologue and Epilogue
 
@@ -275,7 +276,7 @@ Torque provides administrators the ability to run scripts before and/or after ea
 You can add prologue and epilogue scripts from the command line.
 
 ~~~
-qsub -l prologue=/home/user/prologue.sh,epilogue=/home/user/epilogue.sh
+$ qsub -l prologue=/home/user/prologue.sh,epilogue=/home/user/epilogue.sh
 ~~~
 {: .bash}
 
@@ -288,12 +289,13 @@ or adding the corresponding lines on your submission script.
 #PBS -l
 ...
 ~~~
-{: .source}
+{: .bash}
 
 A simple `prologue.sh` can be like this:
 
 ~~~
 #!/bin/sh
+
 echo "Prologue Args:"
 echo "Job ID: $1"
 echo "User ID: $2"
@@ -302,12 +304,13 @@ echo ""
 
 exit 0
 ~~~
-{: .source}
+{: .bash}
 
 And a simple epilogue can be like:
 
 ~~~
 #!/bin/sh
+
 echo "Epilogue Args:"
 echo "Job ID: $1"
 echo "User ID: $2"
@@ -322,11 +325,15 @@ echo ""
 
 exit 0
 ~~~
-{: .source}
+{: .bash}
+
 
 The purpose of the scripts above is to provide information about the job being stored in the same file as the standard output file created for the job. That is very useful if you want to adjust resources based on previous executions and the epilogue will store the information on file.
 
+
 The prologue is also useful, it can check if the proper environment for the job is present and based on the return of that script indicate Torque if the job should continue for execution, resubmit it or cancel it. The following table describes each exit code for the prologue scripts and the action taken.
+
+
 
 |Error	  |Description |Action|
 |:--------|:-----------|:-----|
@@ -338,70 +345,64 @@ The prologue is also useful, it can check if the proper environment for the job 
 |1	|Abort exit code	                  |Job will be aborted|
 |>1	|other	                            |Job will be requeued|
 
+
+
+
 > ## Exercise: Prologue and Epilogue arrays
 >
 > Add prologue and epilogue to the job array from the previous exercise
 >
->{: .source}
 {: .challenge}
+
 
 ## Interactive jobs with X11 Forwarding
 
 Sometimes you need to do some interactive job to create some plots and we would like to see the figures on the fly rather than, bring all the data back to the desktop, this example shows how to achieve that.
 
-​Do the connection to Spruce
-​
 ~~~
 $ ssh -Y username@spruce.hpc.wvu.edu
 ~~~
-{: .bash}​
+{: .bash}
 
+Test the X11 Forwarding
 
-​Test the X11 Forwarding
-
-~~~​
-​$ xeyes
 ~~~
-{: .bash}​
-​
-​A pair of eyes should pop up on your screen, close them.
-Create an interactive session with X11 Forwarding
-asdasd
-asdasda
-​
+$ xeyes
+~~~
+{: .bash}
+
+A windows should appear with two eyes facing you, you can close the window and create a new session with `qsub`
+
 ~~~
 $ qsub -X -I
-​~~~
-{: .source}
+~~~
+{: .bash}
 
-Test it again with xeyes​. This new eyes comes from the compute node, not from the head node.
+After you get a new session and test it again with `xeyes`​. This new eyes comes from the compute node, not from the head node.
 
-   ~~~​
-   ​$ xeyes
-​   ~~~
-   {: .bash}​
+~~~
+$ xeyes
+~~~
+{: .bash}
 
+Lets suppose that the plot will be created with R, load the module for R 3.4.1 (the latest version by the time of this was written)
 
-​Lets suppose that the plot will be created with R, load the module for R 3.4.1 (the latest version by the time of this was written)
-​
-   ~~~
-​   $ module load compilers/R/3.4.1
-   ~~~
-   {: .bash}​
+~~~
+$ module load compilers/R/3.4.1
+~~~
+{: .bash}
 
+Enter in the text-based R interpreter
 
-​Enter in R
-​
-   ~~~
-​   $ R
-   ~~~
-   {: .bash}​
+~~~
+$ R
+~~~
+{: .bash}
 
-​
-​Test a simple plot in R
+Test a simple plot in R
 
-~~~​
-​> # Define the cars vector with 5 values
+~~~
+> # Define the cars vector with 5 values
 > cars <- c(1, 3, 6, 4, 9)
 >
 
@@ -409,7 +410,9 @@ Test it again with xeyes​. This new eyes comes from the compute node, not from
 > plot(cars)
 >
 ~~~
-{: .source}​
+{: .source}
 
+You should get a new window with a plot and a few points.
+On the episode about Singularity we will see some other packages that use the X11 server like RStudio and Visit.
 
 {% include links.md %}
