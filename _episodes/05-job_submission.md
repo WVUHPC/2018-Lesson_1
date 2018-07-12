@@ -356,6 +356,7 @@ Sometimes you need to do some interactive job to create some plots and we would 
    ~~~
    {: .bash}​
 
+
 ​2. Test the X11 Forwarding
 
    ~~~​
@@ -364,34 +365,39 @@ Sometimes you need to do some interactive job to create some plots and we would 
    {: .bash}​
 ​
 ​A pair of eyes should pop up on your screen, close them.
+
 ​
 3. Create an interactive session with X11 Forwarding
 ​
-~~~
-​$ qsub -X -I
-​~~~
-{: .bash}​
+   ~~~
+​   $ qsub -X -I
+​   ~~~
+   {: .bash}​
 
-​4. Test it again with xeyes​
 
-~~~​
-​$ xeyes
-​~~~
-{: .bash}​
+​4. Test it again with xeyes​. This new eyes comes from the compute node, not from the head node.
 
-​5. Load the R module
+   ~~~​
+   ​$ xeyes
+​   ~~~
+   {: .bash}​
+
+
+​5. Lets suppose that the plot will be created with R, load the module for R 3.4.1 (the latest version by the time of this was written)
 ​
-~~~
-​$ module load compilers/R/3.4.1
-~~~
-{: .bash}​
+   ~~~
+​   $ module load compilers/R/3.4.1
+   ~~~
+   {: .bash}​
+
 
 ​6. Enter in R
 ​
-~~~
-​$ R
-~~~
-{: .bash}​
+   ~~~
+​   $ R
+   ~~~
+   {: .bash}​
+
 ​
 ​7. Test a simple plot in R
 
