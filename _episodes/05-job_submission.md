@@ -345,4 +345,66 @@ The prologue is also useful, it can check if the proper environment for the job 
 >{: .source}
 {: .challenge}
 
+## Interactive jobs with X11 Forwarding
+
+Sometimes you need to do some interactive job to create some plots and we would like to see the figures on the fly rather than, bring all the data back to the desktop, this example shows how to achieve that.
+
+​1. Do the connection to Spruce
+​
+~~~
+​$ ssh -Y username@spruce.hpc.wvu.edu
+~~~
+{: .bash}​
+
+​2. Test the X11 Forwarding
+
+~~~​
+​$ xeyes
+~~~
+{: .bash}​
+​
+​A pair of eyes should pop up on your screen, close them!
+​
+3. Create an interactive session with X11 Forwarding
+​
+~~~
+​$ qsub -X -I
+​~~~
+{: .bash}​
+
+​4. Test it again with xeyes​
+
+~~~​
+​$ xeyes
+​~~~
+{: .bash}​
+
+​5. Load the R module
+​
+~~~
+​$ module load compilers/R/3.4.1
+~~~
+{: .bash}​
+
+​6. Enter in R
+​
+~~~
+​$ R
+~~~
+{: .bash}​
+​
+​7. Test a simple plot in R
+
+~~~​
+​> # Define the cars vector with 5 values
+> cars <- c(1, 3, 6, 4, 9)
+>
+
+> # Graph the cars vector with all defaults
+> plot(cars)
+>
+~~~
+{: .source}​
+
+
 {% include links.md %}
