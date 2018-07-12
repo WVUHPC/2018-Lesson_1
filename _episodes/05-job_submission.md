@@ -349,33 +349,32 @@ The prologue is also useful, it can check if the proper environment for the job 
 
 Sometimes you need to do some interactive job to create some plots and we would like to see the figures on the fly rather than, bring all the data back to the desktop, this example shows how to achieve that.
 
-​1. Do the connection to Spruce
+​Do the connection to Spruce
 ​
-   ~~~
- ​  $ ssh -Y username@spruce.hpc.wvu.edu
-   ~~~
-   {: .bash}​
+~~~
+$ ssh -Y username@spruce.hpc.wvu.edu
+~~~
+{: .bash}​
 
 
-​2. Test the X11 Forwarding
+​Test the X11 Forwarding
 
-   ~~~​
-​   $ xeyes
-   ~~~
-   {: .bash}​
+~~~​
+​$ xeyes
+~~~
+{: .bash}​
 ​
 ​A pair of eyes should pop up on your screen, close them.
-
+Create an interactive session with X11 Forwarding
+asdasd
+asdasda
 ​
-3. Create an interactive session with X11 Forwarding
-​
-   ~~~
-​   $ qsub -X -I
-​   ~~~
-   {: .bash}​
+~~~
+$ qsub -X -I
+​~~~
+{: .source}
 
-
-​4. Test it again with xeyes​. This new eyes comes from the compute node, not from the head node.
+Test it again with xeyes​. This new eyes comes from the compute node, not from the head node.
 
    ~~~​
    ​$ xeyes
@@ -383,7 +382,7 @@ Sometimes you need to do some interactive job to create some plots and we would 
    {: .bash}​
 
 
-​5. Lets suppose that the plot will be created with R, load the module for R 3.4.1 (the latest version by the time of this was written)
+​Lets suppose that the plot will be created with R, load the module for R 3.4.1 (the latest version by the time of this was written)
 ​
    ~~~
 ​   $ module load compilers/R/3.4.1
@@ -391,7 +390,7 @@ Sometimes you need to do some interactive job to create some plots and we would 
    {: .bash}​
 
 
-​6. Enter in R
+​Enter in R
 ​
    ~~~
 ​   $ R
@@ -399,7 +398,7 @@ Sometimes you need to do some interactive job to create some plots and we would 
    {: .bash}​
 
 ​
-​7. Test a simple plot in R
+​Test a simple plot in R
 
 ~~~​
 ​> # Define the cars vector with 5 values
