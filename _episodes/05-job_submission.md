@@ -351,19 +351,19 @@ Sometimes you need to do some interactive job to create some plots and we would 
 
 ​1. Do the connection to Spruce
 ​
-~~~
-​$ ssh -Y username@spruce.hpc.wvu.edu
-~~~
-{: .bash}​
+   ~~~
+ ​  $ ssh -Y username@spruce.hpc.wvu.edu
+   ~~~
+   {: .bash}​
 
 ​2. Test the X11 Forwarding
 
-~~~​
-​$ xeyes
-~~~
-{: .bash}​
+   ~~~​
+​   $ xeyes
+   ~~~
+   {: .bash}​
 ​
-​A pair of eyes should pop up on your screen, close them!
+​A pair of eyes should pop up on your screen, close them.
 ​
 3. Create an interactive session with X11 Forwarding
 ​
