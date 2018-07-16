@@ -451,6 +451,7 @@ man <COMMAND>
 >> ## Solution
 >>  You should get:
 >>
+>> ~~~
 >> $ tree
 >>.
 >>├── A
@@ -469,6 +470,8 @@ man <COMMAND>
 >>    ├── X
 >>    ├── Y
 >>    └── Z
+>> ~~~
+>> {: .source}
 > {: .solution}
 >
 > 2. Lets copy some files in those folders. From the data folder
