@@ -1,6 +1,6 @@
 ---
 title: "Environment Modules"
-teaching: 45
+teaching: 15
 exercises: 15
 questions:
 - "How to load modules to access software that I want to use for my research?"

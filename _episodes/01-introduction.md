@@ -22,7 +22,7 @@ All that you need on your computer is a SSH client, a program on your computer t
 https://en.wikipedia.org/wiki/Secure_Shell
 
 
-# ssh
+## ssh
 
 Currently WVU has two clusters for HPC, Mountaineer and Spruce. You can access them using SSH.
 Both Linux and macOS include an SSH client by default. On Windows machines you need to install an external application. A free application called [PuTTY](https://www.putty.org) offers a simple SSH client and [MobaXTerm](https://mobaxterm.mobatek.net) offers you a full featured SSH client plus the ability to open X11 windows from the remote machine.
@@ -56,7 +56,7 @@ Once you enter on the system, you can start typing commands. You can open severa
 > {: .solution}
 {: .challenge}
 
-# Connecting with SSH without password
+## Connecting with SSH without password
 
 If you do not have a pair of public and private keys on your own computer, create a new pair with (Linux and Mac only)
 
@@ -114,7 +114,7 @@ This procedure will not work if you need to use DUO authentication, for example 
 >
 {: .callout}
 
-# tmux
+## tmux
 
 For normal usage, the terminal that you get is probably enough.
 Power users can benefit from a terminal multiplexer such as tmux.
@@ -131,7 +131,7 @@ tmux
 ~~~
 {: .source}
 
-You can create new virtual windows with `CTRL-b c`, you move between windows with `CTRL-b n` and `CTRL-b p`. You can detach from your multiplexed terminals with `CTRL-b d`.
+You can create new virtual windows with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>c</kbd> `CTRL-b c`, you move between windows with `CTRL-b n` and `CTRL-b p`. You can detach from your multiplexed terminals with `CTRL-b d`.
 
 If for some reason you lost the connection to the server or you detached from the multiplexer all that you have to do to reconnect is to execute the command:
 

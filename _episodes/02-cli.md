@@ -11,13 +11,13 @@ keypoints:
 - "Use *man* to search for arguments of command line tools"
 ---
 
-# The top 10 basic commands to learn
+## The top 10 basic commands to learn
 
 When you interact with a HPC cluster your interaction is basically by executing commands on a terminal and editing text files. For newcomers using command lines could be a frustrating experience knowing that there are literally hundreds of commands. Certainly there are manuals for most of those commands, but they are of no use if you do not know which is the command you need to use for each situation. The good news is that you can do a lot of things with just a bunch of them and you can learn others in due time.
 
 This is a selection of the 10 most essential commands you need to learn.
 
-## ls
+### ls
 
 List all the files in a directory. Linux as many Operating Systems organize
 files in files and directories (also called folders).
@@ -58,7 +58,7 @@ lrwxrwxrwx.  1 gufranco users     14 May 30 12:16 link2a -> folder2/file2a
 Those characters on the first column indicate the permissions. The first character will be "d" for directories, "l" for symbolic links and "-" for normal files. The next 3 characters are the permissions for "read", "write" and "execute" for the owner. The next 3 are for the group, and the final 3 are for others.
 The meaning of "execute" for a file indicates that the file could be a script or binary executable. For a directory it means that you can see its contents.
 
-## cp
+### cp
 
 This command copies the contents of one file into another file. For example
 
@@ -67,7 +67,7 @@ $ cp file0b file0c
 ~~~
 {: .source}
 
-## rm
+### rm
 
 This command deletes the contents of one file. For example
 
@@ -85,7 +85,7 @@ $ rm -rf folder_to_delete
 {: .source}
 Be extremely cautious deleting files recursively. You cannot damage the system as the files that you do not own you cannot delete. However, you can delete all your files forever.
 
-## mv
+### mv
 
 This command moves a files from one directory to another. It also can be used to rename files or directories.
 
@@ -94,7 +94,7 @@ $ mv file0b file0c
 ~~~
 {: .source}
 
-## pwd
+### pwd
 
 It is easy to get lost when you move in complex directory structures. pwd will tell you the current directory.
 
@@ -104,7 +104,7 @@ $ pwd
 ~~~
 {: .source}
 
-## cd
+### cd
 
 This command moves you to the directory indicated as an argument, if no argument is given, it returns to your home directory.
 
@@ -113,7 +113,7 @@ $ cd folder1
 ~~~
 {: .source}
 
-## cat and tac
+### cat and tac
 
 When you want to see the contents of a text file, the command cat displays the contents on the screen. It is also useful when you want to concatenate the contents of several files.
 
@@ -136,7 +136,7 @@ $ cat file1 file2 file3 > file_all
 {: .source}
 The command tac shows the files in reverse starting from the last line back to the first one.
 
-## more and less
+### more and less
 
 Sometimes text files, as those created as product of simulations are too large to be seen in one screen, the command "more" shows the files one screen at a time. The command `"less"` offers more functionality and should be the tool of choice to see large text files.
 
@@ -145,7 +145,7 @@ $ less OUTCAR
 ~~~
 {: .source}
 
-## ln
+### ln
 
 This command allow to create links between files. Used wisely could help you save time when traveling frequently to deep directories. By default it creates hard links. Hard links are like copies, but they make references to the same place in disk. Symbolic links are better in many cases because you can cross file systems and partitions. To create a symbolic link
 
@@ -154,7 +154,7 @@ $ ln -s file1 link_to_file1
 ~~~
 {: .source}
 
-## grep
+### grep
 
 The grep command extract from its input the lines containing a specified string or regular expression. It is a powerful command for extracting specific information from large files. Consider for example
 
@@ -169,7 +169,7 @@ $ grep TOTEN OUTCAR
 
 Regular expressions offers ways to specified text strings that could vary in several ways and allow commands such as grep to extract those strings efficiently. We will see more about regular expressions on our third day devoted to data processing.
 
-## More commands
+### More commands
 
 The 10 commands above, will give you enough tools to move files around and
 travel the directory tree.
@@ -477,7 +477,7 @@ man <COMMAND>
 >{: .source}
 {: .challenge}
 
-# Midnight Commander
+## Midnight Commander
 
 GNU Midnight Commander is a visual file manager. mc feature a rich full-screen text mode application that allows you to copy, move and delete files and whole directory trees. Sometimes using a text-based user interface is convenient, in order to use mc just enter the command on the terminal
 
