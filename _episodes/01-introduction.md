@@ -43,7 +43,7 @@ Once you enter on the system, you can start typing commands. You can open severa
 
 > ## Login on Spruce
 >
-> Using the username and password given to you for this training or using your own account login into Spruce and execute the command hostname.
+> Using the username and password given to you for this training or using your own account login into Spruce and execute the command `hostname`.
 >
 > What do you see on the terminal?
 >
