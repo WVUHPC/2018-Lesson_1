@@ -17,9 +17,7 @@ HPC cluster"
 The most common way of accessing a HPC computer cluster is via a remote shell.
 A remote shell allow you to execute commands on another machine same as you do sitting on front of it. A remote shell is good because it also allow other people to do the same, so you get a shared resource being utilized by several users at the same time.
 
-All that you need on your computer is a SSH client, a program on your computer that allow you to connect to the SSH server from another computer. In the old times, people used to create a remote shell using Telnet. SSH provides a secure channel over an unsecured network such as internet. SSH offers similar capabilities to telnet but adding encryption, so all data sent and received between your computer and the remote host is encrypted in such a way that only your computer and the remote computer can see the data. If you want to know more about Secure Shell:
-
-https://en.wikipedia.org/wiki/Secure_Shell
+All that you need on your computer is a SSH client, a program on your computer that allow you to connect to the SSH server from another computer. In the old times, people used to create a remote shell using Telnet. SSH provides a secure channel over an unsecured network such as internet. SSH offers similar capabilities to telnet but adding encryption, so all data sent and received between your computer and the remote host is encrypted in such a way that only your computer and the remote computer can see the data. If you want to know more about Secure Shell see at [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)
 
 
 ## ssh
