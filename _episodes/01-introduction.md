@@ -131,7 +131,7 @@ tmux
 ~~~
 {: .source}
 
-You can create new virtual windows with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>c</kbd> `CTRL-b c`, you move between windows with `CTRL-b n` and `CTRL-b p`. You can detach from your multiplexed terminals with `CTRL-b d`.
+You can create new virtual windows with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>c</kbd>, you move between windows with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>n</kbd> and <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>p</kbd>. You can detach from your multiplexed terminals with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>d</kbd>.
 
 If for some reason you lost the connection to the server or you detached from the multiplexer all that you have to do to reconnect is to execute the command:
 
@@ -140,7 +140,7 @@ tmux a
 ~~~
 {: .source}
 
-In tmux, hit the prefix `CTRL+b` and then:
+In tmux, hit the prefix <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by one of the options below:
 
 ## Sessions
 ~~~
